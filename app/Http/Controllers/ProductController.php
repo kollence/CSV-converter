@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Imports\ProductImport;
+use App\Imports\CategoryImport;
 use Excel;
 
 class ProductController extends Controller
@@ -18,7 +19,9 @@ class ProductController extends Controller
     public function import(Request $request)
     {
         Excel::import(new ProductImport, $request->csv_file);
+        Excel::import(new CategoryImport, $request->csv_file);
         return redirect('/');
+        // dd($request->csv_file);
     }
 
     public function index()
