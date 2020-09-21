@@ -5,6 +5,9 @@ namespace App\Imports;
 use App\Category;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+// use App\Imports\ProductImport;
+
+// use Excel;
 class CategoryImport implements ToModel,WithHeadingRow
 {
     /**
@@ -15,7 +18,7 @@ class CategoryImport implements ToModel,WithHeadingRow
     public function model(array $row)
     {
         
-        
+
         $category = Category::firstOrCreate(
             [
                 'category_name' => $row['category_name']

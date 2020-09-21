@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-use App\Imports\ProductImport;
 use App\Imports\CategoryImport;
+use App\Imports\ProductImport;
+
 use Excel;
 
 class ProductController extends Controller
