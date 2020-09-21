@@ -17,17 +17,18 @@ class ProductController extends Controller
     }
 
     public function import(Request $request)
-    {
-        Excel::import(new ProductImport, $request->csv_file);
+    {   
+        
         Excel::import(new CategoryImport, $request->csv_file);
+        Excel::import(new ProductImport, $request->csv_file);
+        
         return redirect('/');
         // dd($request->csv_file);
     }
 
     public function index()
     {
-        $products = Product::all();
-
+        $products = Product::latest()->paginate(10);
         return view('list-products', compact('products'));
     }
 

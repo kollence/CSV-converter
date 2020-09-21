@@ -2,11 +2,7 @@
 
 @section('content')
 
-<form action="{{route('add.category')}}" method="POST" >
-@csrf
-<input type="text" name="category_name" id=""><input type="submit" value="add category">
-</form>
-<table class="table">
+<table class="table mt-5">
   <thead>
     <tr style="background-color: grey;">
       <th scope="col">model_number</th>

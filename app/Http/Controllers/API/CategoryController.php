@@ -47,7 +47,7 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
 
-        return $category;
+        return $category->products;
     }
 
     /**

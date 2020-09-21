@@ -15,7 +15,7 @@ class CategoryImport implements ToModel,WithHeadingRow
     public function model(array $row)
     {
         
-
+        
         $category = Category::firstOrCreate(
             [
                 'category_name' => $row['category_name']
